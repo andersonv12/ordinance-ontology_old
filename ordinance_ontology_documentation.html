@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Ordinance Ontology</title>
+      <title>Ordinance Ontology</title>
+      <link href="http://150.146.207.114/lode/owl.css" rel="stylesheet" type="text/css" />
+      <link href="http://150.146.207.114/lode/Primer.css" rel="stylesheet" type="text/css" />
+      <link href="http://150.146.207.114/lode/rec.css" rel="stylesheet" type="text/css" />
+      <link href="http://150.146.207.114/lode/extra.css" rel="stylesheet" type="text/css" />
+      <link rel="shortcut icon" href="http://150.146.207.114/lode/favicon.ico" />
+      <script src="http://150.146.207.114/lode/jquery.js"></script><script src="http://150.146.207.114/lode/jquery.scrollTo.js"></script><script src="http://150.146.207.114/lode/marked.min.js"></script><script>
+         $(document).ready(
+             function () {
+                jQuery(".markdown").each(function(el){
+         jQuery(this).after(marked(jQuery(this).text())).remove()});
+                 var list = $('a[name="https://raw.githubusercontent.com/andersonv12/ordinance-ontology/main/ordinance-ontology.owl"]');
+                 if (list.size() != 0) {
+                    var element = list.first();
+                    $.scrollTo(element);
+                 }
+             });
+      </script>
+   </head>
+   <body>
+      <div class="head">
+         <h1>Ordinance Ontology</h1>
+         <dl>
+            <dt>IRI:</dt>
+            <dd>http://purl.org/ordinance-ontology/</dd>
+         </dl>
+         <dl>
+            <dt>Authors:</dt>
+            <dd>Anderson Veiga da Silva</dd>
+            <dd>Mark Douglas de Azevedo Jacyntho</dd>
+         </dl>
+         <dl>
+            <dt>Other visualisation:</dt>
+            <dd><a href="http://150.146.207.114/lode/source?url=https://raw.githubusercontent.com/andersonv12/ordinance-ontology/main/ordinance-ontology.owl">Ontology source</a></dd>
+         </dl>
+      </div>
+      <hr />
+      <h2>Abstract</h2>
+      <span class="markdown">Ontology for representation of ordinances issued by federal educational institutions in Brazil.</span>
+      <div id="toc">
+         <h2>Table of Content</h2>
+         <ol>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#objectproperties">Object Properties</a></li>
+            <li><a href="#dataproperties">Data Properties</a></li>
+            <li><a href="#namedindividuals">Named Individuals</a></li>
+            <li><a href="#annotationproperties">Annotation Properties</a></li>
+            <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+         </ol>
+      </div>
+      <div id="classes">
+         <h2>Classes</h2>
+         <ul class="hlist">
+            <li><a href="#d4e659" title="http://purl.org/ordinance-ontology/Act">Act</a></li>
+            <li><a href="#d4e1205" title="http://xmlns.com/foaf/0.1/Agent">Agent</a></li>
+            <li><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a></li>
+            <li><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a></li>
+            <li><a href="#d4e721" title="http://purl.org/ordinance-ontology/Condition">Condition</a></li>
+            <li><a href="#d4e1086" title="http://schema.org/CreativeWork">Creative Work</a></li>
+            <li><a href="#d4e1218" title="http://xmlns.com/foaf/0.1/Document">Document</a></li>
+            <li><a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a></li>
+            <li><a href="#d4e734" title="http://purl.org/ordinance-ontology/Entailment">Entailment</a></li>
+            <li><a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate"><span>mandate</span></a></li>
+            <li><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a></li>
+            <li><a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a></li>
+            <li><a href="#d4e864" title="http://purl.org/ordinance-ontology/OfficialDocumentIssuer">Official Document Issuer</a></li>
+            <li><a href="#d4e920" title="http://purl.org/ordinance-ontology/Ordinance">Ordinance</a></li>
+            <li><a href="#d4e1102" title="http://schema.org/Organization">Organization</a></li>
+            <li><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a></li>
+            <li><a href="#d4e1244" title="http://xmlns.com/foaf/0.1/Organization">Organization</a></li>
+            <li><a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a></li>
+            <li><a href="#d4e1117" title="http://schema.org/Person">Person</a></li>
+            <li><a href="#d4e1260" title="http://xmlns.com/foaf/0.1/Person">Person</a></li>
+            <li><a href="#d4e1028" title="http://purl.org/ordinance-ontology/PublicServant">Public Servant</a></li>
+            <li><a href="#d4e1051" title="http://purl.org/ordinance-ontology/Reference">Reference</a></li>
+            <li><a href="#d4e1132" title="http://schema.org/Thing">Thing</a></li>
+         </ul>
+         <div id="d4e659" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Act"></a>
+            <h3>Act<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Act</p>
+            <div class="comment"><span class="markdown">Represents normative acts published in ordinances.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e193" title="http://purl.org/ordinance-ontology/hasAct">Has act</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e721" title="http://purl.org/ordinance-ontology/Condition">Condition</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1205" class="entity">
+            <a name="http://xmlns.com/foaf/0.1/Agent"></a>
+            <h3>Agent<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Agent</p>
+            <div class="comment"><span class="markdown">Represents an agent (eg. person, group, organization, etc).</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e864" title="http://purl.org/ordinance-ontology/OfficialDocumentIssuer">Official Document Issuer</a><sup title="class" class="type-c">c</sup>, <a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e401" title="http://schema.org/creator">creator</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e417" title="http://schema.org/publisher">publisher</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e674" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Collaboration"></a>
+            <h3>Collaboration<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Collaboration</p>
+            <div class="comment"><span class="markdown">Represents the collaboration of a public servant with an organization.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e573" title="http://schema.org/startDate">start date</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1</dd>
+               <dd><a href="#d4e535" title="http://schema.org/endDate">end date</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1</dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e734" title="http://purl.org/ordinance-ontology/Entailment">Entailment</a><sup title="class" class="type-c">c</sup>, <a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate">mandate</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e72" title="http://purl.org/ordinance-ontology/collaborationOf">collaboration of</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e89" title="http://purl.org/ordinance-ontology/collaborationWith">collaboration with</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a><sup title="class" class="type-c">c</sup>, <a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1155" class="entity">
+            <a name="http://www.w3.org/2004/02/skos/core#Concept"></a>
+            <h3>Concept<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#Concept</p>
+            <div class="comment"><span class="markdown">Represents an idea or notion; a unit of thought.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e621" title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e604" title="http://www.w3.org/2004/02/skos/core#altLabel">alternative label</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e621" title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a><sup title="data property" class="type-dp">dp</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e228" title="http://purl.org/ordinance-ontology/hasFunction">has function</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e261" title="http://purl.org/ordinance-ontology/hasPosition">has position</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e278" title="http://purl.org/ordinance-ontology/hasType">has type</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>has members</dt>
+               <dd><a href="#d4e1488" title="http://purl.org/ordinance-ontology/general_director">Diretor Geral</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1459" title="http://purl.org/ordinance-ontology/council_president">Presidente do Conselho</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1514" title="http://purl.org/ordinance-ontology/pro_rector">Pró-Reitor</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1558" title="http://purl.org/ordinance-ontology/rector">Reitor</a><sup title="named individual" class="type-ni">ni</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup>, <a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a><sup title="class" class="type-c">c</sup>, <a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e721" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Condition"></a>
+            <h3>Condition<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Condition</p>
+            <div class="comment"><span class="markdown">Represents conditions or prerequisites that validate the ordinances's normative acts.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e211" title="http://purl.org/ordinance-ontology/hasCondition">Has condition</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e659" title="http://purl.org/ordinance-ontology/Act">Act</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1086" class="entity">
+            <a name="http://schema.org/CreativeWork"></a>
+            <h3>Creative Work<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/CreativeWork</p>
+            <div class="comment"><span class="markdown">The most generic kind of creative work, including books, movies, photographs, software programs, etc.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e1218" title="http://xmlns.com/foaf/0.1/Document">Document</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e401" title="http://schema.org/creator">creator</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e516" title="http://schema.org/datePublished">date published</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e417" title="http://schema.org/publisher">publisher</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1218" class="entity">
+            <a name="http://xmlns.com/foaf/0.1/Document"></a>
+            <h3>Document<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Document</p>
+            <div class="comment"><span class="markdown">Represents a document.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e516" title="http://schema.org/datePublished">date published</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">max</span> 1</dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e894" class="entity">
+            <a name="http://purl.org/ordinance-ontology/OfficialDocumentItem"></a>
+            <h3>Document Item<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/OfficialDocumentItem</p>
+            <div class="comment"><span class="markdown">Represents items described in official documents.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e278" title="http://purl.org/ordinance-ontology/hasType">has type</a><sup title="object property" class="type-op">op</sup> <span class="logic">max</span> 1</dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e659" title="http://purl.org/ordinance-ontology/Act">Act</a><sup title="class" class="type-c">c</sup>, <a href="#d4e721" title="http://purl.org/ordinance-ontology/Condition">Condition</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e344" title="http://purl.org/ordinance-ontology/references">references</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e245" title="http://purl.org/ordinance-ontology/hasItem">Has item</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1051" title="http://purl.org/ordinance-ontology/Reference">Reference</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e734" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Entailment"></a>
+            <h3>Entailment<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Entailment</p>
+            <div class="comment"><span class="markdown">Represents a position that a public servant holds.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e261" title="http://purl.org/ordinance-ontology/hasPosition">has position</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e137" title="http://purl.org/ordinance-ontology/entailmentOf">entailment of</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e463" title="http://purl.org/ordinance-ontology/functionalId">functional id</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e261" title="http://purl.org/ordinance-ontology/hasPosition">has position</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>has keys</dt>
+               <dd><a href="#d4e463" title="http://purl.org/ordinance-ontology/functionalId">functional id</a><sup title="data property" class="type-dp">dp</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate">mandate</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e765" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Mandate"></a>
+            <h3>mandate<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Mandate</p>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e228" title="http://purl.org/ordinance-ontology/hasFunction">has function</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e158" title="http://purl.org/ordinance-ontology/exercisedBy">exercised by</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e228" title="http://purl.org/ordinance-ontology/hasFunction">has function</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e734" title="http://purl.org/ordinance-ontology/Entailment">Entailment</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e783" class="entity">
+            <a name="http://purl.org/ordinance-ontology/OfficialDocument"></a>
+            <h3>Official Document<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/OfficialDocument</p>
+            <div class="comment"><span class="markdown">Represents official documents published by public educational institutions.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e1218" title="http://xmlns.com/foaf/0.1/Document">Document</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e319" title="http://purl.org/ordinance-ontology/publisher">publisher</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e483" title="http://purl.org/ordinance-ontology/number">number</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1</dd>
+               <dd><a href="#d4e516" title="http://schema.org/datePublished">date published</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1</dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e920" title="http://purl.org/ordinance-ontology/Ordinance">Ordinance</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e245" title="http://purl.org/ordinance-ontology/hasItem">Has item</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e483" title="http://purl.org/ordinance-ontology/number">number</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e319" title="http://purl.org/ordinance-ontology/publisher">publisher</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1051" title="http://purl.org/ordinance-ontology/Reference">Reference</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e847" class="entity">
+            <a name="http://purl.org/ordinance-ontology/OfficialDocumentComponent"></a>
+            <h3>Official Document Component<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/OfficialDocumentComponent</p>
+            <div class="comment"><span class="markdown">Represents all kinds of componentes related to documents.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a><sup title="class" class="type-c">c</sup>, <a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1051" title="http://purl.org/ordinance-ontology/Reference">Reference</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup>, <a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e864" class="entity">
+            <a name="http://purl.org/ordinance-ontology/OfficialDocumentIssuer"></a>
+            <h3>Official Document Issuer<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/OfficialDocumentIssuer</p>
+            <div class="comment"><span class="markdown">Represents an entity responsible for issuing official documents.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><span class="logic">inverse</span> <a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1205" title="http://xmlns.com/foaf/0.1/Agent">Agent</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e920" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Ordinance"></a>
+            <h3>Ordinance<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Ordinance</p>
+            <div class="comment"><span class="markdown">Represents official documents that define competencies, establish rules and procedures, discipline matters not regulated by law, define functional situations and apply disciplinary measures, among others things.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e193" title="http://purl.org/ordinance-ontology/hasAct">Has act</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup> <span class="logic">only</span> <a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate">mandate</a><sup title="class" class="type-c">c</sup> <span class="logic">or</span> (<a href="#d4e180" title="http://purl.org/ordinance-ontology/exercises">exercises</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate">mandate</a><sup title="class" class="type-c">c</sup>)</dd>
+               <dd><a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1 <a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate">mandate</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e589" title="http://schema.org/url">url</a><sup title="data property" class="type-dp">dp</sup> <span class="logic">exactly</span> 1</dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e193" title="http://purl.org/ordinance-ontology/hasAct">Has act</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e211" title="http://purl.org/ordinance-ontology/hasCondition">Has condition</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1102" class="entity">
+            <a name="http://schema.org/Organization"></a>
+            <h3>Organization<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/Organization</p>
+            <div class="comment"><span class="markdown">An organization such as a school, non-governmental organization, corporation, club, etc.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1178" class="entity">
+            <a name="http://www.w3.org/ns/org#Organization"></a>
+            <h3>Organization<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/ns/org#Organization</p>
+            <div class="comment"><span class="markdown">Represents a collection of people organized together into a community or other social, commercial or political structure.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e1244" title="http://xmlns.com/foaf/0.1/Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <span class="logic">max</span> 1</dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e89" title="http://purl.org/ordinance-ontology/collaborationWith">collaboration with</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e319" title="http://purl.org/ordinance-ontology/publisher">publisher</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>has members</dt>
+               <dd><a href="#d4e1382" title="http://purl.org/ordinance-ontology/campus_marica">Campus Avançado Maricá</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1428" title="http://purl.org/ordinance-ontology/campus_sao_joao">Campus Avançado São João da Barra</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1275" title="http://purl.org/ordinance-ontology/campus_bom_jesus">Campus Bom Jesus do Itabapoana</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1290" title="http://purl.org/ordinance-ontology/campus_cabo_frio">Campus Cabo Frio</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1306" title="http://purl.org/ordinance-ontology/campus_cambuci">Campus Cambuci</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1321" title="http://purl.org/ordinance-ontology/campus_centro">Campus Campos-Centro</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1336" title="http://purl.org/ordinance-ontology/campus_guarus">Campus Campos-Guarus</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1352" title="http://purl.org/ordinance-ontology/campus_itaperuna">Campus Itaperuna</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1367" title="http://purl.org/ordinance-ontology/campus_macae">Campus Macaé</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1413" title="http://purl.org/ordinance-ontology/campus_quissama">Campus Quissamã</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1398" title="http://purl.org/ordinance-ontology/campus_padua">Campus Santo Antônio de Pádua</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1472" title="http://purl.org/ordinance-ontology/cref">Centro de Referência em Tecnologia, Informação e Comunicação na Educação</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1444" title="http://purl.org/ordinance-ontology/consup">Conselho Superior</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1501" title="http://purl.org/ordinance-ontology/iff">Instituto Federal Fluminense</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1528" title="http://purl.org/ordinance-ontology/proadm">Pró-Reitoria de Administração</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1543" title="http://purl.org/ordinance-ontology/progep">Pró-Reitoria de Gestão de Pessoas</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a><sup title="named individual" class="type-ni">ni</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1244" class="entity">
+            <a name="http://xmlns.com/foaf/0.1/Organization"></a>
+            <h3>Organization<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Organization</p>
+            <div class="comment"><span class="markdown">Represents a collection of people organized together into a community or other social, commercial or political structure.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e1260" title="http://xmlns.com/foaf/0.1/Person">Person</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e996" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Party"></a>
+            <h3>Party<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Party</p>
+            <div class="comment"><span class="markdown">Represents individuals or groups.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e1244" title="http://xmlns.com/foaf/0.1/Organization">Organization</a><sup title="class" class="type-c">c</sup> <span class="logic">or</span> <a href="#d4e1260" title="http://xmlns.com/foaf/0.1/Person">Person</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e1205" title="http://xmlns.com/foaf/0.1/Agent">Agent</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1244" title="http://xmlns.com/foaf/0.1/Organization">Organization</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1260" title="http://xmlns.com/foaf/0.1/Person">Person</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup>, <a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1117" class="entity">
+            <a name="http://schema.org/Person"></a>
+            <h3>Person<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/Person</p>
+            <div class="comment"><span class="markdown">A person (alive, dead, undead, or fictional).</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e1260" title="http://xmlns.com/foaf/0.1/Person">Person</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1260" class="entity">
+            <a name="http://xmlns.com/foaf/0.1/Person"></a>
+            <h3>Person<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Person</p>
+            <div class="comment"><span class="markdown">Represents a person.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e1028" title="http://purl.org/ordinance-ontology/PublicServant">Public Servant</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e1244" title="http://xmlns.com/foaf/0.1/Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1028" class="entity">
+            <a name="http://purl.org/ordinance-ontology/PublicServant"></a>
+            <h3>Public Servant<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/PublicServant</p>
+            <div class="comment"><span class="markdown">Represents people who maintain professional employment entailment with government agencies and entities.</span></div>
+            <dl class="description">
+               <dt>is equivalent to</dt>
+               <dd><a href="#d4e122" title="http://purl.org/ordinance-ontology/entailedTo">entailed to</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e1260" title="http://xmlns.com/foaf/0.1/Person">Person</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e72" title="http://purl.org/ordinance-ontology/collaborationOf">collaboration of</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e137" title="http://purl.org/ordinance-ontology/entailmentOf">entailment of</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e158" title="http://purl.org/ordinance-ontology/exercisedBy">exercised by</a><sup title="object property" class="type-op">op</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1051" class="entity">
+            <a name="http://purl.org/ordinance-ontology/Reference"></a>
+            <h3>Reference<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/Reference</p>
+            <div class="comment"><span class="markdown">Represents any thing referenced by a document item.</span></div>
+            <dl class="description">
+               <dt>has super-classes</dt>
+               <dd><a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a><sup title="class" class="type-c">c</sup></dd>
+               <dd><a href="#d4e278" title="http://purl.org/ordinance-ontology/hasType">has type</a><sup title="object property" class="type-op">op</sup> <span class="logic">max</span> 1</dd>
+               <dd><a href="#d4e359" title="http://purl.org/ordinance-ontology/subject">subject</a><sup title="object property" class="type-op">op</sup> <span class="logic">max</span> 1</dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e359" title="http://purl.org/ordinance-ontology/subject">subject</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is in range of</dt>
+               <dd><a href="#d4e344" title="http://purl.org/ordinance-ontology/references">references</a><sup title="object property" class="type-op">op</sup></dd>
+               <dt>is disjoint with</dt>
+               <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup>, <a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a><sup title="class" class="type-c">c</sup></dd>
+            </dl>
+         </div>
+         <div id="d4e1132" class="entity">
+            <a name="http://schema.org/Thing"></a>
+            <h3>Thing<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/Thing</p>
+            <div class="comment"><span class="markdown">The most generic type of item.</span></div>
+            <dl class="description">
+               <dt>has sub-classes</dt>
+               <dd><a href="#d4e1205" title="http://xmlns.com/foaf/0.1/Agent">Agent</a><sup title="class" class="type-c">c</sup>, <a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1086" title="http://schema.org/CreativeWork">Creative Work</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1218" title="http://xmlns.com/foaf/0.1/Document">Document</a><sup title="class" class="type-c">c</sup>, <a href="#d4e847" title="http://purl.org/ordinance-ontology/OfficialDocumentComponent">Official Document Component</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1102" title="http://schema.org/Organization">Organization</a><sup title="class" class="type-c">c</sup>, <a href="#d4e996" title="http://purl.org/ordinance-ontology/Party">Party</a><sup title="class" class="type-c">c</sup>, <a href="#d4e1117" title="http://schema.org/Person">Person</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>is in domain of</dt>
+               <dd><a href="#d4e500" title="http://schema.org/alternateName">alternate name</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://schema.org/description">description</span><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e535" title="http://schema.org/endDate">end date</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e551" title="http://schema.org/identifier">identifier</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e573" title="http://schema.org/startDate">start date</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e589" title="http://schema.org/url">url</a><sup title="data property" class="type-dp">dp</sup></dd>
+            </dl>
+         </div>
+      </div>
+      <div id="objectproperties">
+         <h2>Object Properties</h2>
+         <ul class="hlist">
+            <li><a href="#d4e377" title="http://schema.org/about">about</a></li>
+            <li><a href="#d4e388" title="http://schema.org/author">author</a></li>
+            <li><a href="#d4e59" title="http://purl.org/ordinance-ontology/collaboratesIn">collaborates in</a></li>
+            <li><a href="#d4e72" title="http://purl.org/ordinance-ontology/collaborationOf">collaboration of</a></li>
+            <li><a href="#d4e89" title="http://purl.org/ordinance-ontology/collaborationWith">collaboration with</a></li>
+            <li><a href="#d4e401" title="http://schema.org/creator">creator</a></li>
+            <li><a href="#d4e107" title="http://purl.org/ordinance-ontology/directPublisher">direct publisher</a></li>
+            <li><a href="#d4e122" title="http://purl.org/ordinance-ontology/entailedTo">entailed to</a></li>
+            <li><a href="#d4e137" title="http://purl.org/ordinance-ontology/entailmentOf">entailment of</a></li>
+            <li><a href="#d4e158" title="http://purl.org/ordinance-ontology/exercisedBy">exercised by</a></li>
+            <li><a href="#d4e180" title="http://purl.org/ordinance-ontology/exercises">exercises</a></li>
+            <li><a href="#d4e193" title="http://purl.org/ordinance-ontology/hasAct">Has act</a></li>
+            <li><a href="#d4e211" title="http://purl.org/ordinance-ontology/hasCondition">Has condition</a></li>
+            <li><a href="#d4e228" title="http://purl.org/ordinance-ontology/hasFunction">has function</a></li>
+            <li><a href="#d4e245" title="http://purl.org/ordinance-ontology/hasItem">Has item</a></li>
+            <li><a href="#d4e261" title="http://purl.org/ordinance-ontology/hasPosition">has position</a></li>
+            <li><a href="#d4e432" title="http://www.w3.org/ns/org#hasSubOrganization">has sub-organization</a></li>
+            <li><a href="#d4e278" title="http://purl.org/ordinance-ontology/hasType">has type</a></li>
+            <li><a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a></li>
+            <li><a href="#d4e319" title="http://purl.org/ordinance-ontology/publisher">publisher</a></li>
+            <li><a href="#d4e417" title="http://schema.org/publisher">publisher</a></li>
+            <li><a href="#d4e344" title="http://purl.org/ordinance-ontology/references">references</a></li>
+            <li><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a></li>
+            <li><a href="#d4e359" title="http://purl.org/ordinance-ontology/subject">subject</a></li>
+         </ul>
+         <div id="d4e377" class="entity">
+            <a name="http://schema.org/about"></a>
+            <h3>about<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/about</p>
+            <div class="comment"><span class="markdown">The subject matter of the content.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e359" title="http://purl.org/ordinance-ontology/subject">subject</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e388" class="entity">
+            <a name="http://schema.org/author"></a>
+            <h3>author<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/author</p>
+            <div class="comment"><span class="markdown">The author of a content or rating</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has equivalent properties</dt>
+                  <dd><a href="#d4e401" title="http://schema.org/creator">creator</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e59" class="entity">
+            <a name="http://purl.org/ordinance-ontology/collaboratesIn"></a>
+            <h3>collaborates in<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/collaboratesIn</p>
+            <div class="comment"><span class="markdown">Indicates the collaboration related to the public servant.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e122" title="http://purl.org/ordinance-ontology/entailedTo">entailed to</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e180" title="http://purl.org/ordinance-ontology/exercises">exercises</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e72" title="http://purl.org/ordinance-ontology/collaborationOf">collaboration of</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e72" class="entity">
+            <a name="http://purl.org/ordinance-ontology/collaborationOf"></a>
+            <h3>collaboration of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/collaborationOf</p>
+            <div class="comment"><span class="markdown">Indicates the public servant related to a collaboration.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e137" title="http://purl.org/ordinance-ontology/entailmentOf">entailment of</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e158" title="http://purl.org/ordinance-ontology/exercisedBy">exercised by</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1028" title="http://purl.org/ordinance-ontology/PublicServant">Public Servant</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e59" title="http://purl.org/ordinance-ontology/collaboratesIn">collaborates in</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e89" class="entity">
+            <a name="http://purl.org/ordinance-ontology/collaborationWith"></a>
+            <h3>collaboration with<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/collaborationWith</p>
+            <div class="comment"><span class="markdown">Indicates the organization related to a collaboration.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e674" title="http://purl.org/ordinance-ontology/Collaboration">Collaboration</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e401" class="entity">
+            <a name="http://schema.org/creator"></a>
+            <h3>creator<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/creator</p>
+            <div class="comment"><span class="markdown">The creator/author of a CreativeWork.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has equivalent properties</dt>
+                  <dd><a href="#d4e388" title="http://schema.org/author">author</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1086" title="http://schema.org/CreativeWork">Creative Work</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1205" title="http://xmlns.com/foaf/0.1/Agent">Agent</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e107" class="entity">
+            <a name="http://purl.org/ordinance-ontology/directPublisher"></a>
+            <h3>direct publisher<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/directPublisher</p>
+            <div class="comment"><span class="markdown">Indicates an organization which directly published an official document.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e319" title="http://purl.org/ordinance-ontology/publisher">publisher</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e122" class="entity">
+            <a name="http://purl.org/ordinance-ontology/entailedTo"></a>
+            <h3>entailed to<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/entailedTo</p>
+            <div class="comment"><span class="markdown">Indicates the entailment to which the public servant is entailed.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e59" title="http://purl.org/ordinance-ontology/collaboratesIn">collaborates in</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e137" title="http://purl.org/ordinance-ontology/entailmentOf">entailment of</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e137" class="entity">
+            <a name="http://purl.org/ordinance-ontology/entailmentOf"></a>
+            <h3>entailment of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/entailmentOf</p>
+            <div class="comment"><span class="markdown">Indicates the public servant to which an entailment refers.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e72" title="http://purl.org/ordinance-ontology/collaborationOf">collaboration of</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e734" title="http://purl.org/ordinance-ontology/Entailment">Entailment</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1028" title="http://purl.org/ordinance-ontology/PublicServant">Public Servant</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e122" title="http://purl.org/ordinance-ontology/entailedTo">entailed to</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e158" class="entity">
+            <a name="http://purl.org/ordinance-ontology/exercisedBy"></a>
+            <h3>exercised by<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/exercisedBy</p>
+            <div class="comment"><span class="markdown">Indicates the public servant who exercises a mandate.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e72" title="http://purl.org/ordinance-ontology/collaborationOf">collaboration of</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate">mandate</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1028" title="http://purl.org/ordinance-ontology/PublicServant">Public Servant</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e180" title="http://purl.org/ordinance-ontology/exercises">exercises</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e180" class="entity">
+            <a name="http://purl.org/ordinance-ontology/exercises"></a>
+            <h3>exercises<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/exercises</p>
+            <div class="comment"><span class="markdown">Indicates the mandate exercised by a public servant.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e59" title="http://purl.org/ordinance-ontology/collaboratesIn">collaborates in</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e158" title="http://purl.org/ordinance-ontology/exercisedBy">exercised by</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e193" class="entity">
+            <a name="http://purl.org/ordinance-ontology/hasAct"></a>
+            <h3>Has act<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/hasAct</p>
+            <div class="comment"><span class="markdown">Indicates a normative act described in an ordinance.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e245" title="http://purl.org/ordinance-ontology/hasItem">Has item</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e920" title="http://purl.org/ordinance-ontology/Ordinance">Ordinance</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e659" title="http://purl.org/ordinance-ontology/Act">Act</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e211" class="entity">
+            <a name="http://purl.org/ordinance-ontology/hasCondition"></a>
+            <h3>Has condition<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/hasCondition</p>
+            <div class="comment"><span class="markdown">Indicates a condition or prerequisite described in an ordinance.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e245" title="http://purl.org/ordinance-ontology/hasItem">Has item</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e920" title="http://purl.org/ordinance-ontology/Ordinance">Ordinance</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e721" title="http://purl.org/ordinance-ontology/Condition">Condition</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e228" class="entity">
+            <a name="http://purl.org/ordinance-ontology/hasFunction"></a>
+            <h3>has function<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/hasFunction</p>
+            <div class="comment"><span class="markdown">Indicates the role performed by a public servant during a mandate.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e765" title="http://purl.org/ordinance-ontology/Mandate">mandate</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e245" class="entity">
+            <a name="http://purl.org/ordinance-ontology/hasItem"></a>
+            <h3>Has item<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/hasItem</p>
+            <div class="comment"><span class="markdown">Indicates an item described in an official document.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e193" title="http://purl.org/ordinance-ontology/hasAct">Has act</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e211" title="http://purl.org/ordinance-ontology/hasCondition">Has condition</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e261" class="entity">
+            <a name="http://purl.org/ordinance-ontology/hasPosition"></a>
+            <h3>has position<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/hasPosition</p>
+            <div class="comment"><span class="markdown">Indicates the position held by a public servant.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e734" title="http://purl.org/ordinance-ontology/Entailment">Entailment</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e432" class="entity">
+            <a name="http://www.w3.org/ns/org#hasSubOrganization"></a>
+            <h3>has sub-organization<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/ns/org#hasSubOrganization</p>
+            <div class="comment"><span class="markdown">Indicates an organization which is a sub-part or child of this organization.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e278" class="entity">
+            <a name="http://purl.org/ordinance-ontology/hasType"></a>
+            <h3>has type<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/hasType</p>
+            <div class="comment"><span class="markdown">Indicates the type or category of a thing.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e293" class="entity">
+            <a name="http://purl.org/ordinance-ontology/issuedBy"></a>
+            <h3>issued by<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/issuedBy</p>
+            <div class="comment"><span class="markdown">Indicates the issuer of an official document.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e401" title="http://schema.org/creator">creator</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e864" title="http://purl.org/ordinance-ontology/OfficialDocumentIssuer">Official Document Issuer</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has sub-property chains</dt>
+                  <dd><a href="#d4e293" title="http://purl.org/ordinance-ontology/issuedBy">issued by</a><sup title="object property" class="type-op">op</sup> <span class="logic">o</span> <a href="#d4e72" title="http://purl.org/ordinance-ontology/collaborationOf">collaboration of</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e319" class="entity">
+            <a name="http://purl.org/ordinance-ontology/publisher"></a>
+            <h3>publisher<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/publisher</p>
+            <div class="comment"><span class="markdown">Indicates a organization which published an official document.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e417" title="http://schema.org/publisher">publisher</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e107" title="http://purl.org/ordinance-ontology/directPublisher">direct publisher</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has sub-property chains</dt>
+                  <dd><a href="#d4e319" title="http://purl.org/ordinance-ontology/publisher">publisher</a><sup title="object property" class="type-op">op</sup> <span class="logic">o</span> <a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e417" class="entity">
+            <a name="http://schema.org/publisher"></a>
+            <h3>publisher<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/publisher</p>
+            <div class="comment"><span class="markdown">The publisher of the creative work.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e319" title="http://purl.org/ordinance-ontology/publisher">publisher</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1086" title="http://schema.org/CreativeWork">Creative Work</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1205" title="http://xmlns.com/foaf/0.1/Agent">Agent</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e344" class="entity">
+            <a name="http://purl.org/ordinance-ontology/references"></a>
+            <h3>references<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/references</p>
+            <div class="comment"><span class="markdown">Indicates a reference to which a document item refers.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e894" title="http://purl.org/ordinance-ontology/OfficialDocumentItem">Document Item</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1051" title="http://purl.org/ordinance-ontology/Reference">Reference</a><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e445" class="entity">
+            <a name="http://www.w3.org/ns/org#subOrganizationOf"></a>
+            <h3>sub-organization of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/ns/org#subOrganizationOf</p>
+            <div class="comment"><span class="markdown">Indicates an organization which contains this organization.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>is inverse of</dt>
+                  <dd><a href="#d4e432" title="http://www.w3.org/ns/org#hasSubOrganization">has sub-organization</a><sup title="object property" class="type-op">op</sup></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e359" class="entity">
+            <a name="http://purl.org/ordinance-ontology/subject"></a>
+            <h3>subject<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/subject</p>
+            <div class="comment"><span class="markdown">Indicates any thing related to a reference of a document item.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e377" title="http://schema.org/about">about</a><sup title="object property" class="type-op">op</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1051" title="http://purl.org/ordinance-ontology/Reference">Reference</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+               </dl>
+            </div>
+         </div>
+      </div>
+      <div id="dataproperties">
+         <h2>Data Properties</h2>
+         <ul class="hlist">
+            <li><a href="#d4e500" title="http://schema.org/alternateName">alternate name</a></li>
+            <li><a href="#d4e604" title="http://www.w3.org/2004/02/skos/core#altLabel">alternative label</a></li>
+            <li><a href="#d4e516" title="http://schema.org/datePublished">date published</a></li>
+            <li><a href="#d4e535" title="http://schema.org/endDate">end date</a></li>
+            <li><a href="#d4e463" title="http://purl.org/ordinance-ontology/functionalId">functional id</a></li>
+            <li><a href="#d4e551" title="http://schema.org/identifier">identifier</a></li>
+            <li><a href="#d4e566" title="http://schema.org/name"><span>name</span></a></li>
+            <li><a href="#d4e642" title="http://xmlns.com/foaf/0.1/name">name</a></li>
+            <li><a href="#d4e483" title="http://purl.org/ordinance-ontology/number">number</a></li>
+            <li><a href="#d4e621" title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a></li>
+            <li><a href="#d4e573" title="http://schema.org/startDate">start date</a></li>
+            <li><a href="#d4e589" title="http://schema.org/url">url</a></li>
+         </ul>
+         <div id="d4e500" class="entity">
+            <a name="http://schema.org/alternateName"></a>
+            <h3>alternate name<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/alternateName</p>
+            <div class="comment"><span class="markdown">An alias for the item.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e604" title="http://www.w3.org/2004/02/skos/core#altLabel">alternative label</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e604" class="entity">
+            <a name="http://www.w3.org/2004/02/skos/core#altLabel"></a>
+            <h3>alternative label<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#altLabel</p>
+            <div class="comment"><span class="markdown">An alternative lexical label for a resource.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e500" title="http://schema.org/alternateName">alternate name</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e516" class="entity">
+            <a name="http://schema.org/datePublished"></a>
+            <h3>date published<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/datePublished</p>
+            <div class="comment"><span class="markdown">Date of first publication.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1086" title="http://schema.org/CreativeWork">Creative Work</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e535" class="entity">
+            <a name="http://schema.org/endDate"></a>
+            <h3>end date<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/endDate</p>
+            <div class="comment"><span class="markdown">The end date and time of the item (in ISO 8601 date format).</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e463" class="entity">
+            <a name="http://purl.org/ordinance-ontology/functionalId"></a>
+            <h3>functional id<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/functionalId</p>
+            <div class="comment"><span class="markdown">Indicates a functional identifier for a particular entailment associated with a public servant.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e551" title="http://schema.org/identifier">identifier</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e734" title="http://purl.org/ordinance-ontology/Entailment">Entailment</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e551" class="entity">
+            <a name="http://schema.org/identifier"></a>
+            <h3>identifier<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/identifier</p>
+            <div class="comment"><span class="markdown">Represents any kind of identifier for any kind of thing.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e463" title="http://purl.org/ordinance-ontology/functionalId">functional id</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e483" title="http://purl.org/ordinance-ontology/number">number</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e566" class="entity">
+            <a name="http://schema.org/name"></a>
+            <h3>name<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/name</p>
+            <div class="description">
+               <dl>
+                  <dt>has equivalent properties</dt>
+                  <dd><a href="#d4e642" title="http://xmlns.com/foaf/0.1/name">name</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has sub-properties</dt>
+                  <dd><a href="#d4e621" title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>is also defined as</dt>
+                  <dd><a href="#d4e45">annotation property</a></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e642" class="entity">
+            <a name="http://xmlns.com/foaf/0.1/name"></a>
+            <h3>name<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/name</p>
+            <div class="comment"><span class="markdown">A name for some thing.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has equivalent properties</dt>
+                  <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">Thing</span><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e483" class="entity">
+            <a name="http://purl.org/ordinance-ontology/number"></a>
+            <h3>number<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/number</p>
+            <div class="comment"><span class="markdown">Indicates a number related to a document.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e551" title="http://schema.org/identifier">identifier</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e783" title="http://purl.org/ordinance-ontology/OfficialDocument">Official Document</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e621" class="entity">
+            <a name="http://www.w3.org/2004/02/skos/core#prefLabel"></a>
+            <h3>preferred label<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#prefLabel</p>
+            <div class="comment"><span class="markdown">The preferred lexical label for a resource, in a given language.</span></div>
+            <div class="description">
+               <p><strong>has characteristics:</strong> functional</p>
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e573" class="entity">
+            <a name="http://schema.org/startDate"></a>
+            <h3>start date<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/startDate</p>
+            <div class="comment"><span class="markdown">The start date and time of the item (in ISO 8601 date format).</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span></dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e589" class="entity">
+            <a name="http://schema.org/url"></a>
+            <h3>url<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/url</p>
+            <div class="comment"><span class="markdown">URL of the item.</span></div>
+            <div class="description">
+               <dl>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</span></dd>
+               </dl>
+            </div>
+         </div>
+      </div>
+      <div id="namedindividuals">
+         <h2>Named Individuals</h2>
+         <ul class="hlist">
+            <li><a href="#d4e1382" title="http://purl.org/ordinance-ontology/campus_marica">Campus Avançado Maricá</a></li>
+            <li><a href="#d4e1428" title="http://purl.org/ordinance-ontology/campus_sao_joao">Campus Avançado São João da Barra</a></li>
+            <li><a href="#d4e1275" title="http://purl.org/ordinance-ontology/campus_bom_jesus">Campus Bom Jesus do Itabapoana</a></li>
+            <li><a href="#d4e1290" title="http://purl.org/ordinance-ontology/campus_cabo_frio">Campus Cabo Frio</a></li>
+            <li><a href="#d4e1306" title="http://purl.org/ordinance-ontology/campus_cambuci">Campus Cambuci</a></li>
+            <li><a href="#d4e1321" title="http://purl.org/ordinance-ontology/campus_centro">Campus Campos-Centro</a></li>
+            <li><a href="#d4e1336" title="http://purl.org/ordinance-ontology/campus_guarus">Campus Campos-Guarus</a></li>
+            <li><a href="#d4e1352" title="http://purl.org/ordinance-ontology/campus_itaperuna">Campus Itaperuna</a></li>
+            <li><a href="#d4e1367" title="http://purl.org/ordinance-ontology/campus_macae">Campus Macaé</a></li>
+            <li><a href="#d4e1413" title="http://purl.org/ordinance-ontology/campus_quissama">Campus Quissamã</a></li>
+            <li><a href="#d4e1398" title="http://purl.org/ordinance-ontology/campus_padua">Campus Santo Antônio de Pádua</a></li>
+            <li><a href="#d4e1472" title="http://purl.org/ordinance-ontology/cref">Centro de Referência em Tecnologia, Informação e Comunicação na Educação</a></li>
+            <li><a href="#d4e1444" title="http://purl.org/ordinance-ontology/consup">Conselho Superior</a></li>
+            <li><a href="#d4e1488" title="http://purl.org/ordinance-ontology/general_director">Diretor Geral</a></li>
+            <li><a href="#d4e1501" title="http://purl.org/ordinance-ontology/iff">Instituto Federal Fluminense</a></li>
+            <li><a href="#d4e1459" title="http://purl.org/ordinance-ontology/council_president">Presidente do Conselho</a></li>
+            <li><a href="#d4e1514" title="http://purl.org/ordinance-ontology/pro_rector">Pró-Reitor</a></li>
+            <li><a href="#d4e1528" title="http://purl.org/ordinance-ontology/proadm">Pró-Reitoria de Administração</a></li>
+            <li><a href="#d4e1543" title="http://purl.org/ordinance-ontology/progep">Pró-Reitoria de Gestão de Pessoas</a></li>
+            <li><a href="#d4e1558" title="http://purl.org/ordinance-ontology/rector">Reitor</a></li>
+            <li><a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></li>
+         </ul>
+         <div id="d4e1382" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_marica"></a>
+            <h3>Campus Avançado Maricá<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_marica</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Avançado Maricá"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1428" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_sao_joao"></a>
+            <h3>Campus Avançado São João da Barra<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_sao_joao</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Avançado São João da Barra"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1275" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_bom_jesus"></a>
+            <h3>Campus Bom Jesus do Itabapoana<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_bom_jesus</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Bom Jesus do Itabapoana"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1290" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_cabo_frio"></a>
+            <h3>Campus Cabo Frio<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_cabo_frio</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Cabo Frio"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1306" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_cambuci"></a>
+            <h3>Campus Cambuci<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_cambuci</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Cambuci"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1321" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_centro"></a>
+            <h3>Campus Campos-Centro<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_centro</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Campos-Centro"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1336" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_guarus"></a>
+            <h3>Campus Campos-Guarus<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_guarus</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Campos-Guarus"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1352" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_itaperuna"></a>
+            <h3>Campus Itaperuna<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_itaperuna</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Itaperuna"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1367" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_macae"></a>
+            <h3>Campus Macaé<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_macae</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Macaé"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1413" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_quissama"></a>
+            <h3>Campus Quissamã<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_quissama</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Quissamã"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1398" class="entity">
+            <a name="http://purl.org/ordinance-ontology/campus_padua"></a>
+            <h3>Campus Santo Antônio de Pádua<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/campus_padua</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Campus Santo Antônio de Pádua"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1472" class="entity">
+            <a name="http://purl.org/ordinance-ontology/cref"></a>
+            <h3>Centro de Referência em Tecnologia, Informação e Comunicação na Educação<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/cref</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Centro de Referência em Tecnologia, Informação e Comunicação na Educação"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1444" class="entity">
+            <a name="http://purl.org/ordinance-ontology/consup"></a>
+            <h3>Conselho Superior<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/consup</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Conselho Superior"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1488" class="entity">
+            <a name="http://purl.org/ordinance-ontology/general_director"></a>
+            <h3>Diretor Geral<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/general_director</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Diretor Geral"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1501" class="entity">
+            <a name="http://purl.org/ordinance-ontology/iff"></a>
+            <h3>Instituto Federal Fluminense<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/iff</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Instituto Federal Fluminense"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1459" class="entity">
+            <a name="http://purl.org/ordinance-ontology/council_president"></a>
+            <h3>Presidente do Conselho<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/council_president</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Presidente do Conselho"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1514" class="entity">
+            <a name="http://purl.org/ordinance-ontology/pro_rector"></a>
+            <h3>Pró-Reitor<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/pro_rector</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Pró-Reitor"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1528" class="entity">
+            <a name="http://purl.org/ordinance-ontology/proadm"></a>
+            <h3>Pró-Reitoria de Administração<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/proadm</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Pró-Reitoria de Administração"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1543" class="entity">
+            <a name="http://purl.org/ordinance-ontology/progep"></a>
+            <h3>Pró-Reitoria de Gestão de Pessoas<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/progep</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1572" title="http://purl.org/ordinance-ontology/reitoria">Reitoria</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Pró-Reitoria de Gestão de Pessoas"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1558" class="entity">
+            <a name="http://purl.org/ordinance-ontology/rector"></a>
+            <h3>Reitor<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/rector</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1155" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Reitor"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+         <div id="d4e1572" class="entity">
+            <a name="http://purl.org/ordinance-ontology/reitoria"></a>
+            <h3>Reitoria<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/ordinance-ontology/reitoria</p>
+            <dl class="description">
+               <dt>belongs to</dt>
+               <dd><a href="#d4e1178" title="http://www.w3.org/ns/org#Organization">Organization</a><sup title="class" class="type-c">c</sup></dd>
+               <dt>has facts</dt>
+               <dd><a href="#d4e445" title="http://www.w3.org/ns/org#subOrganizationOf">sub-organization of</a><sup title="object property" class="type-op">op</sup> <a href="#d4e1501" title="http://purl.org/ordinance-ontology/iff">Instituto Federal Fluminense</a></dd>
+               <dd><a href="#d4e566" title="http://schema.org/name">name</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"Reitoria"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></span></dd>
+            </dl>
+         </div>
+      </div>
+      <div id="annotationproperties">
+         <h2>Annotation Properties</h2>
+         <ul class="hlist">
+            <li><a href="#d4e25" title="http://purl.org/dc/elements/1.1/creator"><span>creator</span></a></li>
+            <li><a href="#d4e34" title="http://schema.org/description"><span>description</span></a></li>
+            <li><a href="#d4e30" title="http://purl.org/dc/elements/1.1/language"><span>language</span></a></li>
+            <li><a href="#d4e45" title="http://schema.org/name"><span>name</span></a></li>
+         </ul>
+         <div id="d4e25" class="entity">
+            <a name="http://purl.org/dc/elements/1.1/creator"></a>
+            <h3>creator<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+         </div>
+         <div id="d4e34" class="entity">
+            <a name="http://schema.org/description"></a>
+            <h3>description<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/description</p>
+            <div class="description">
+               <dl>
+                  <dt>has super-properties</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#comment">comment</span></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+                  <dt>is also defined as</dt>
+                  <dd>data property</dd>
+               </dl>
+            </div>
+         </div>
+         <div id="d4e30" class="entity">
+            <a name="http://purl.org/dc/elements/1.1/language"></a>
+            <h3>language<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/language</p>
+         </div>
+         <div id="d4e45" class="entity">
+            <a name="http://schema.org/name"></a>
+            <h3>name<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://schema.org/name</p>
+            <div class="description">
+               <dl>
+                  <dt>has equivalent properties</dt>
+                  <dd><span class="dotted" title="http://xmlns.com/foaf/0.1/name">name</span></dd>
+                  <dt>has super-properties</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#label">label</span></dd>
+                  <dt>has domain</dt>
+                  <dd><a href="#d4e1132" title="http://schema.org/Thing">Thing</a><sup title="class" class="type-c">c</sup></dd>
+                  <dt>has range</dt>
+                  <dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+                  <dt>is also defined as</dt>
+                  <dd><a href="#d4e566">data property</a></dd>
+               </dl>
+            </div>
+         </div>
+      </div>
+      <div id="namespacedeclarations">
+         <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+         <dl>
+            <dt><em>default namespace</em></dt>
+            <dd>http://purl.org/ordinance-ontology/</dd>
+            <dt>dc</dt>
+            <dd>http://purl.org/dc/elements/1.1/</dd>
+            <dt>foaf</dt>
+            <dd>http://xmlns.com/foaf/0.1/</dd>
+            <dt>ord</dt>
+            <dd>http://purl.org/ordinance-ontology/</dd>
+            <dt>org</dt>
+            <dd>http://www.w3.org/ns/org#</dd>
+            <dt>owl</dt>
+            <dd>http://www.w3.org/2002/07/owl#</dd>
+            <dt>rdf</dt>
+            <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+            <dt>rdfs</dt>
+            <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
+            <dt>schema</dt>
+            <dd>http://schema.org/</dd>
+            <dt>skos</dt>
+            <dd>http://www.w3.org/2004/02/skos/core#</dd>
+            <dt>xsd</dt>
+            <dd>http://www.w3.org/2001/XMLSchema#</dd>
+         </dl>
+      </div>
+      <p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio Peroni</a>.</p>
+   </body>
+</html>
